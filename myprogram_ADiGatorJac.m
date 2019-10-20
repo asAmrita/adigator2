@@ -18,11 +18,14 @@ Gator1Data = ADiGator_myprogram_ADiGatorJac.myprogram_ADiGatorJac.Gator1Data;
 %User Line: % FIT -- Given x and d, fit() returns p
 %User Line: % such that norm(V*p-d) = min, where
 %User Line: % V = [1, x, x.^2, ... x.^(m-1)].
-cada1f1dx = 2.*x.f(:).^(2-1).*x.dx;
-cada1f1 = x.f.^2;
+y.dx = 4.*x.f(:).^(4-1).*x.dx;
+y.f = x.f.^4;
+%User Line: y=x.^4;
+cada1f1dx = 2.*y.f(:).^(2-1).*y.dx;
+cada1f1 = y.f.^2;
 V.dx = cada1f1dx;
 V.f = 1 + cada1f1;
-%User Line: V=1+x.^2;
+%User Line: V=1+y.^2;
 cada1tf3 = V.f\d;
 cada1td1 = zeros(1,100);
 cada1td1(Gator1Data.Index1) = V.dx;

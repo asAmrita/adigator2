@@ -36,3 +36,4 @@ fprintf('Derivatives of myprogram function:\n');
 fprintf(['ADiGator File Generation Time: ',num2str(gentime),'\n']);
 fprintf(['ADiGator Average Eval Time:    ',num2str(adigatortime),'\n']);
 fprintf(['F Diff Average Eval Time:      ',num2str(fdtime),'\n']);
+plot(A,B)
